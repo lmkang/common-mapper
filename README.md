@@ -1,5 +1,6 @@
 # common-mapper
 A Mybatis CRUD plugin
+
 一、Mybatis通用Mapper(BaseMapper)
 在springboot中使用
 	a、引入jar包，放在本地Maven仓库
