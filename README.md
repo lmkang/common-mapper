@@ -2,7 +2,9 @@
 A Mybatis CRUD plugin
 
 一、Mybatis通用Mapper(BaseMapper)
+
 在springboot中使用
+
 	a、引入jar包，放在本地Maven仓库
 	
 	b、注册和配置BaseMapperInterceptor
@@ -57,18 +59,18 @@ A Mybatis CRUD plugin
 		(1)只支持AND查询;
 		(2)orderBy("", ""): 第二个参数为"ASC"或者"DESC", 不区分大小写, 推荐大写
 		
-二、注意事项
-1、一定要注册配置BaseMapperInterceptor,并且注解和xml方式不能混用,否则会抛出空指针异常!!!
-2、xml中必须有一个<resultMap>标签的id为BaseResultMap;
-3、查询: 只支持单表、多对一查询;
-4、<association>标签必填的属性: property, javaType, column, columnPrefix;
-5、自定义查询条件(Criteria)只支持AND查询;
-6、除了update,其他操作的Criteria不能为null;
-7、update: 如果Criteria为null, 则默认按照主键更新;
-8、该插件不影响自定义的sql和mapper, 你可以写自己的sql和mapper, 但是方法名称不要和插件的几个方法名重复;
-9、fieldList如果为null, 则默认查询所有字段(建议写上);
-10、该插件适用范围: 
-	(1)单表、多对一的增删改查;
-	(2)只支持单一主键,并且外键关联也必须关联相应的单一主键;
-	(3)自定义查询条件只支持AND;
+二、注意事项<br/>
+1、一定要注册配置BaseMapperInterceptor,并且注解和xml方式不能混用,否则会抛出空指针异常!!!<br/>
+2、xml中必须有一个<resultMap>标签的id为BaseResultMap;<br/>
+3、查询: 只支持单表、多对一查询;<br/>
+4、<association>标签必填的属性: property, javaType, column, columnPrefix;<br/>
+5、自定义查询条件(Criteria)只支持AND查询;<br/>
+6、除了update,其他操作的Criteria不能为null;<br/>
+7、update: 如果Criteria为null, 则默认按照主键更新;<br/>
+8、该插件不影响自定义的sql和mapper, 你可以写自己的sql和mapper, 但是方法名称不要和插件的几个方法名重复;<br/>
+9、fieldList如果为null, 则默认查询所有字段(建议写上);<br/>
+10、该插件适用范围: <br/>
+	(1)单表、多对一的增删改查;<br/>
+	(2)只支持单一主键,并且外键关联也必须关联相应的单一主键;<br/>
+	(3)自定义查询条件只支持AND;<br/>
 	(4)只支持一层的多对一, 例如(不支持): A表(多)关联B表(一), B表(多)关联C表(一);
