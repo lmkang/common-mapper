@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wandaima.mapper.EmployeeInfoMapper">
+	<resultMap id="BaseResultMap" type="org.wandaima.model.EmployeeInfo">
+		<id column="id" property="id" />
+		<result column="full_name" property="fullName" />
+		<result column="birthday" property="birthday"/>
+		<result column="phone_number" property="phoneNumber"/>
+		<association property="departmentInfo" column="dept_id"
+			javaType="DepartmentInfo" columnPrefix="dept_">
+			<id column="id" property="id" />
+			<result column="dept_name" property="deptName" />
+			<result column="description" property="description"/>
+		</association>
+	</resultMap>
+	
+</mapper>
