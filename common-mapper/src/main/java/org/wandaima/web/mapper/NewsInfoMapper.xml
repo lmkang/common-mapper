@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wandaima.web.mapper.NewsInfoMapper">
+	<resultMap type="NewsInfo" id="BaseResultMap">
+		<id column="id" property="id"/>
+		<result column="title" property="title"/>
+		<result column="type" property="type"/>
+		<result column="content" property="content"/>
+		<result column="author" property="author"/>
+		<result column="publish_time" property="publishTime"/>
+		<association property="enterpriseInfo" javaType="EnterpriseInfo" column="enterprise_id" columnPrefix="e_">
+			<id column="id" property="id"/>
+			<result column="enterprise_name" property="enterpriseName"/>
+			<result column="type" property="type"/>
+			<result column="enterprise_summary" property="enterpriseSummary"/>
+			<result column="org_code" property="orgCode"/>
+			<result column="reg_date" property="regDate"/>
+		</association>
+		<association property="departmentInfo" javaType="DepartmentInfo" column="dept_id" columnPrefix="d_">
+			<id column="id" property="id"/>
+			<result column="dept_name" property="deptName"/>
+			<result column="content" property="content"/>
+		</association>
+	</resultMap>
+	
+	<select id="selectNewsInfo" resultMap="BaseResultMap">
+		SELECT * FROM news_info;
+	</select>
+</mapper>

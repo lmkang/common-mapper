@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wandaima.web.mapper.StudentInfoMapper">
+	<resultMap type="StudentInfo" id="BaseResultMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="age" property="age"/>
+		<result column="stu_number" property="stuNumber"/>
+		<collection property="teacherInfoList" ofType="TeacherInfo" column="teacher_id" columnPrefix="t_">
+			<id column="id" property="id"/>
+			<result column="name" property="name"/>
+			<result column="age" property="age"/>
+			<result column="post" property="post"/>
+		</collection>
+	</resultMap>
+	
+</mapper>

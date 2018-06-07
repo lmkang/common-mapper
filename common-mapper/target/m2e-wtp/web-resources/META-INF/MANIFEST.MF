@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: common-mapper
+Implementation-Version: 1.0
+Built-By: zqj
+Implementation-Vendor-Id: org.wandaima
+Build-Jdk: 1.8.0_112
+Implementation-URL: http://projects.spring.io/spring-boot/common-mappe
+ r/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
